@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PicHub | About US</title>
+        <link rel="stylesheet" href="About US.css">
+        <link rel="stylesheet" href="header.footer.css">
+        <link rel="icon" type="image/x-icon" href="Photos/PicHubStudios-Circle.png">
+        
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <img src="Photos/PicHubStudios-Circle.png" alt="Logo">
+                <span>N-Patel</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="active" href="About US.html">About Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="About US.html#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>    
+
+        <section class="intro">
+            <div class="about">                
+            <h1>About Us</h1>
+            <p>Pichub PhotoStudio is a premier destination for capturing life’s most cherished moments with unparalleled artistry and precision. Renowned for its innovative approach and state-of-the-art technology, Pichub PhotoStudio offers a comprehensive range of photography services, from elegant portrait sessions to dynamic event coverage.<br><br>Our team of seasoned photographers is dedicated to crafting stunning visuals that tell compelling stories, reflecting the unique essence of each subject. With a commitment to excellence and a passion for creativity, Pichub PhotoStudio transforms ordinary scenes into extraordinary works of art, ensuring that every image we create is a timeless treasure. Whether for personal keepsakes or professional portfolios, Pichub PhotoStudio is your trusted partner in preserving memories with style and sophistication.</p>
+            </div>
+        </section>
+
+        <section class="team" id="team-grid">
+            <h2>Meet Our Team</h2>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="Photos/about us/n.jpg" alt="Storm">
+                    <h3>Storm</h3>
+                    <p>CEO</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="Photos/about us/s.jpg" alt="Shadow">
+                    <h3>Shadow</h3>
+                    <p>Editor</p>
+                </div>
+                
+                <div class="team-member">
+                    <img src="Photos/about us/j.jpg" alt="Neon Ghost">
+                    <h3>Neon Ghost</h3>
+                    <p>COO</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>For more information or help, contact us by emailing us at <a href="mailto:info@npatel.co.uk">info@npatel.co.uk</a>
+                     or text us on our official Instagram page <a href="https://www.instagram.com/pichub_official_/" target="_blank">pichub_official_</a>. Our team will try their best to provide you with answers.</p>
+            </div>
+            
+        </section>
+        
+
+        <footer class="footer">
+    
+            <ul class="social-icon">
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+              <li class="social-icon__item"><a class="social-icon__link" href="#">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+              <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
+              <li class="menu__item"><a class="menu__link" href="About US.html">About Us</a></li>
+              <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
+              <li class="menu__item"><a class="menu__link" href="About US.html#team-grid">Team</a></li>
+              <li class="menu__item"><a class="menu__link" href="About US.html#contact">Contact Us</a></li>     
+            </ul>
+            <div class="copyright">
+                <p>&copy; 2024 PicHub | All Rights Reserverd</p>
+            </div>
+          </footer>
+          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script>
+            // JavaScript to handle the header fade in and out on scroll
+            let lastScrollTop = 0;
+            const header = document.querySelector('header');
+    
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                if (scrollTop > lastScrollTop) {
+                    // Downscroll
+                    header.classList.add('hidden');
+                } else {
+                    // Upscroll
+                    header.classList.remove('hidden');
+                }
+                lastScrollTop = scrollTop;
+            });
+        </script>
+    </body>
+</html>

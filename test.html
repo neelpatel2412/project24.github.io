@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <style>
+        body {
+            background-color: #000;
+        }
+
+        body, h1 {
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+        }
+
+        .w3-content {
+            margin: 0 auto;
+            padding: 0 20px;
+            max-width: 2000px;
+        }
+
+        .w3-row-padding {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .w3-column {
+            flex-basis: 25%;
+            padding: 8px;
+            position: relative;
+        }
+
+        .w3-column img {
+            max-width: 100%;
+            height: auto;
+            padding: 8px;
+            margin: 0;
+            display: block;
+            object-fit: cover;
+            transition: filter 0.3s ease;
+            cursor: pointer;
+        }
+
+        .w3-column img:hover {
+            filter: brightness(40%) saturate(120%);
+        }
+
+        .img-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-btn {
+            position: absolute;
+            top: 86%;
+            left: 85%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 15px;
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+            color: #000;
+            font-size: 1em;
+            width: 120px;
+            text-align: center;
+        }
+
+        .download-btn:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        .img-container:hover .download-btn {
+            opacity: 1;
+        }
+
+        @media screen and (max-width: 1600px) {
+            .w3-row-padding {
+                justify-content: space-between;
+            }
+            .w3-column {
+                flex-basis: 31.33%;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            .w3-column {
+                flex-basis: 48%;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .w3-column {
+                flex-basis: 100%;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .w3-column {
+                flex-basis: 100%;
+            }
+        }
+
+        /* Base styles for the modal */
+        #imageModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+
+        #imageModal .img-container {
+            position: relative;
+            max-width: 90%;
+            max-height: 90%;
+            margin: auto;
+            text-align: center;
+        }
+
+        #imageModal img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+        }
+
+        #imageModal .download-btn {
+            position: absolute;
+            bottom: 10%; /* Adjusted for spacing */
+            left: 50%;
+            top: 80%;
+            transform: translateX(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 8px 12px; /* Adjusted padding for fit */
+            border: 2px solid #333;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #000;
+            font-size: 1em; /* Adjusted font size */
+            transition: background-color 0.3s, color 0.3s;
+            height: fit-content;
+        }
+
+        #imageModal .download-btn:hover {
+            background-color: #000;
+            color: #fff;
+            border-color: #fff;
+        }
+
+        /* Media queries for responsive adjustments */
+        @media screen and (max-width: 1600px) {
+            #imageModal .download-btn {
+                padding: 7px 11px;
+            }
+        }
+
+        @media screen and (max-width: 1200px) {
+            #imageModal .download-btn {
+                padding: 6px 10px;
+            }
+        }
+
+        @media screen and (max-width: 992px) {
+            #imageModal .download-btn {
+                padding: 5px 9px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            #imageModal .download-btn {
+                padding: 4px 8px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            #imageModal .download-btn {
+                padding: 3px 7px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="w3-content">
+        <header class="w3-center w3-margin-bottom">
+            <h1><b>PHOTOLIO</b></h1>
+            <p><b>A template made by w3.css for photographers.</b></p>
+        </header>
+        
+        <div class="w3-row-padding" id="photoGrid"></div>
+        
+        <div id="imageModal" class="w3-modal" onclick="closeModal()">
+            <div class="img-container" onclick="event.stopPropagation()">
+                <img id="modalImage">
+                <button id="modalDownloadBtn" class="download-btn">Download</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function loadImages() {
+            const w3RowPadding = document.getElementById('photoGrid');
+            const folderPath = 'Anime/Naruto/';
+            const imageCount = 100;
+            const screenWidth = window.innerWidth;
+            let columnCount = 4;
+
+            if (screenWidth <= 1600 && screenWidth > 1200) {
+                columnCount = 3;
+            } else if (screenWidth <= 1200 && screenWidth > 768) {
+                columnCount = 2;
+            } else if (screenWidth <= 768) {
+                columnCount = 1;
+            }
+
+            w3RowPadding.innerHTML = '';
+
+            for (let i = 0; i < columnCount; i++) {
+                const column = document.createElement('div');
+                column.classList.add('w3-column');
+                w3RowPadding.appendChild(column);
+            }
+
+            for (let i = 1; i <= imageCount; i++) {
+                const imgContainer = document.createElement('div');
+                imgContainer.classList.add('img-container');
+
+                const img = document.createElement('img');
+                img.src = `${folderPath}${i}.jpg`;
+                img.alt = `Image ${i}`;
+
+                img.addEventListener('click', function() {
+                    openModal(img.src);
+                });
+
+                imgContainer.appendChild(img);
+
+                const downloadBtn = document.createElement('button');
+                downloadBtn.classList.add('download-btn');
+                downloadBtn.textContent = 'View';
+                downloadBtn.addEventListener('click', function(event) {
+                    event.stopPropagation();
+                    openModal(img.src);
+                });
+
+                imgContainer.appendChild(downloadBtn);
+
+                const columnIndex = (i - 1) % columnCount;
+                w3RowPadding.children[columnIndex].appendChild(imgContainer);
+            }
+        }
+
+        function openModal(imageSrc) {
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('imageModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+
+            const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+            // Remove any existing click event listener to avoid adding multiple listeners
+            modalDownloadBtn.onclick = null;
+
+            modalDownloadBtn.onclick = function(event) {
+                event.stopPropagation();
+                downloadImage(imageSrc);
+            };
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto'; // Re-enable background scrolling
+        }
+
+        function downloadImage(imageSrc) {
+            fetch(imageSrc)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+                    return response.blob();
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = imageSrc.split('/').pop();
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('There has been a problem with your fetch operation:', error);
+                    alert('Could not download the image.');
+                });
+        }
+
+        window.onload = loadImages;
+        window.onresize = loadImages;
+    </script>
+</body>
+</html>
