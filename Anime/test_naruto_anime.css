@@ -1,0 +1,134 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #000000;
+}
+.gallery {
+    display: grid;
+    grid-gap: 30px;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.photo {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #dedede;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+.photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+    object-fit: cover;
+    margin: 0 auto;
+}
+.photo:hover {
+    transform: scale(1.05);
+}
+.download-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 2px;
+    background-color: #3f4144;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.2s ease-in-out;
+    z-index: 10;
+    border-color: #000;
+}
+.download-btn:hover {
+    background-color: #1a1b1b;
+    transform: scale(1.05);
+}
+@media (min-width: 1920px) {
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+    .photo img {
+        max-width: 450px;
+        max-height: 300px;
+    }
+    .download-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .gallery {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    .photo img {
+        max-width: 400px;
+        max-height: 250px;
+    }
+    .download-btn {
+        font-size: 16px;
+        padding: 8px 18px;
+    }
+}
+@media (min-width: 1200px) and (max-width: 1599px) {
+    .gallery {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .photo img {
+        max-width: 350px;
+        max-height: 220px;
+    }
+    .download-btn {
+        font-size: 14px;
+        padding: 6px 16px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .photo img {
+        max-width: 300px;
+        max-height: 200px;
+    }
+    .download-btn {
+        font-size: 12px;
+        padding: 4px 14px;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .photo img {
+        max-width: 250px;
+        max-height: 180px;
+    }
+    .download-btn {
+        font-size: 10px;
+        padding: 2px 12px;
+    }
+}
+@media (max-width: 767px) {
+    .gallery {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .photo img {
+        max-width: 200px;
+        max-height: 150px;
+    }
+    .download-btn {
+        font-size: 8px;
+        padding: 1px 10px;
+    }
+}

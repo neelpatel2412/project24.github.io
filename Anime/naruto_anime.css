@@ -1,0 +1,188 @@
+body {
+    background-color: #000;
+}
+
+body, h1 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+}
+
+.w3-content {
+    margin: 0 auto;
+    padding: 0 20px;
+    max-width: 2000px;
+}
+
+.w3-row-padding {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.w3-column {
+    flex-basis: 25%;
+    padding: 8px;
+    position: relative;
+}
+
+.w3-column img {
+    max-width: 100%;
+    height: auto;
+    padding: 8px;
+    margin: 0;
+    display: block;
+    object-fit: cover;
+    transition: filter 0.3s ease;
+    cursor: pointer;
+}
+
+.w3-column img:hover {
+    filter: brightness(40%) saturate(120%);
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.download-btn {
+    position: absolute;
+    top: 86%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 10px 15px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+    color: #000;
+    font-size: 1em;
+    width: 120px;
+    text-align: center;
+}
+
+.download-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+.img-container:hover .download-btn {
+    opacity: 1;
+}
+
+@media screen and (max-width: 1600px) {
+    .w3-row-padding {
+        justify-content: space-between;
+    }
+    .w3-column {
+        flex-basis: 31.33%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .w3-column {
+        flex-basis: 48%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .w3-column {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .w3-column {
+        flex-basis: 100%;
+    }
+}
+
+/* Base styles for the modal */
+#imageModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+}
+
+#imageModal .img-container {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+#imageModal img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin: auto;
+}
+
+#imageModal .download-btn {
+    position: absolute;
+    bottom: 10%; /* Adjusted for spacing */
+    left: 50%;
+    top: 80%;
+    transform: translateX(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 8px 12px; /* Adjusted padding for fit */
+    border: 2px solid #333;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000;
+    font-size: 1em; /* Adjusted font size */
+    transition: background-color 0.3s, color 0.3s;
+    height: fit-content;
+}
+
+#imageModal .download-btn:hover {
+    background-color: #000;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Media queries for responsive adjustments */
+@media screen and (max-width: 1600px) {
+    #imageModal .download-btn {
+        padding: 7px 11px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    #imageModal .download-btn {
+        padding: 6px 10px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    #imageModal .download-btn {
+        padding: 5px 9px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #imageModal .download-btn {
+        padding: 4px 8px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    #imageModal .download-btn {
+        padding: 3px 7px;
+        font-size: 0.8em;
+    }
+}

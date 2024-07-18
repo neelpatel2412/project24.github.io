@@ -7,6 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="gallery.css">
+    <script src="header.footer.js"></script>
     <link rel="icon" type="image/x-icon" href="Photos/PicHubStudios-Circle.png">
 </head>
 <body>
@@ -23,7 +24,19 @@
                 <li><a href="About US.html#contact">Contact Us</a></li>
             </ul>
         </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
+    <div id="sidebar-menu">
+        <ul>
+            <li><a  href="index.html">Home</a></li>
+            <li><a href="About US.html">About Us</a></li>
+            <li><a class="active"href="gallery.html">Gallery</a></li>
+            <li><a href="About US.html#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="overlay" onclick="toggleMenu()"></div> 
     <main>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -164,33 +177,35 @@
             </div>
         </div>
     </main>
-    <footer class="footer">
-    
-        <ul class="social-icon">
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-facebook"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-twitter"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-linkedin"></ion-icon>
-            </a></li>
-          <li class="social-icon__item"><a class="social-icon__link" href="#">
-              <ion-icon name="logo-instagram"></ion-icon>
-            </a></li>
-        </ul>
-        <ul class="menu">
-          <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
-          <li class="menu__item"><a class="menu__link" href="About US.html">About Us</a></li>
-          <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
-          <li class="menu__item"><a class="menu__link" href="About US.html#team-grid">Team</a></li>
-          <li class="menu__item"><a class="menu__link" href="About US.html#contact">Contact Us</a></li>     
-        </ul>
-        <div class="copyright">
-            <p>&copy; 2024 PicHub | All Rights Reserverd</p>
+    <footer>
+        <div class="footer-container">
+            
+            <ul class="footer-link">
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a></li>
+            </ul>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About US.html">About us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="About US.html#team-grid">Team</a></li>
+                <li><a href="About US.html#contact">Contact us</a></li>
+            </ul>
+            <div class="copyright">
+                &copy;  PicHub | All rights reserved
+            </div>
         </div>
-      </footer>
+    </footer>
       <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script>
         let lastScrollTop = 0;
