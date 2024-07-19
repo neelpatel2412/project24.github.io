@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="anime_gallery.css">
     <link rel="icon" type="image/x-icon" href="Photos/PicHubStudios-Circle.png">
+    <script src="header.footer.js"></script>
 </head>
 <body>
     <header>
@@ -18,54 +19,111 @@
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About US.html">About Us</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="About US.html#contact">Contact Us</a></li>
+                <li><a href="X:\Website\project24.github.io\index.html">Home</a></li>
+                <li><a href="X:\Website\project24.github.io\About US.html">About Us</a></li>
+                <li><a href="X:\Website\project24.github.io\gallery.html">Gallery</a></li>
+                <li><a class="active" href="anime_gallery.html">Anime Gallery</a></li>
+                <li><a href="X:\Website\project24.github.io\About US.html#contact">Contact Us</a></li>
+                
             </ul>
         </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
     </header>
+    <div id="sidebar-menu">
+        <ul>
+            <li><a href="X:\Website\project24.github.io\index.html">Home</a></li>
+            <li><a href="X:\Website\project24.github.io\About US.html">About Us</a></li>
+            <li><a href="X:\Website\project24.github.io\gallery.html">Gallery</a></li>
+            <li><a class="active" href="anime_gallery.html">Anime Gallery</a></li>
+            <li><a href="X:\Website\project24.github.io\About US.html#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="overlay" onclick="toggleMenu()"></div>   
     <main>
         <div class="card-slider-container">
             <div class="card-slider" id="card-slider">
-                <div class="card" onclick="goToDetails('tokyo-ghoul.html')"">
+                <div class="card" onclick="goToDetails('tokyo-ghoul_anime.html')">
                     <img src="https://mfiles.alphacoders.com/101/thumb-350-1013749.webp" alt="Image 1">
                     <h3>Tokyo Ghoul</h3>
                 </div>
-                <div class="card"  onclick="goToDetails('naruto.html')">
+                <div class="card"  onclick="goToDetails('naruto_anime.html')">
                     <img src="https://i.pinimg.com/originals/34/c8/d2/34c8d2bc3e49048268e0f28b56f741f0.jpg" alt="Image 2">
                     <h3>Naruto</h3>
                 </div>
-                <div class="card" onclick="goToDetails('jujutsu-kaisen.html')">
+                <div class="card" onclick="goToDetails('jujutsu-kaisen_anime.html')">
                     <img src="https://wallpapercave.com/wp/wp9402026.jpg" alt="Image 3">
                     <h3>JJK</h3>
                 </div>
-                <div class="card"  onclick="goToDetails('tokyo-revengers.html')">
+                <div class="card"  onclick="goToDetails('tokyo-revengers_anime.html')">
                     <img src="https://image.cdn2.seaart.ai/2023-06-17/35520900075589/37aadb27e66dd73da21f48928dcb15959a222225_high.webp" alt="Image 4">
                     <h3>Tokyo Revengers</h3>
                 </div>
-                <div class="card"  onclick="goToDetails('DBS.html')">
+                <div class="card"  onclick="goToDetails('DBS_anime.html')">
                     <img src="https://www.chromethemer.com/download/hd-wallpapers/dragon-ball-super-super-3840x2160.jpg" alt="Image 5">
                     <h3>DBS</h3>
                 </div>
                 <!-- Duplicated cards for smooth scrolling -->
-                <div class="card" onclick="goToDetails('tokyo-ghoul.html')"">
+                <div class="card" onclick="goToDetails('tokyo-ghoul_anime.html')"">
                     <img src="https://mfiles.alphacoders.com/101/thumb-350-1013749.webp" alt="Image 1">
                     <h3>Tokyo Ghoul</h3>
                 </div>
-                <div class="card" onclick="goToDetails('naruto.html')">
+                <div class="card" onclick="goToDetails('naruto_anime.html')">
                     <img src="https://i.pinimg.com/originals/34/c8/d2/34c8d2bc3e49048268e0f28b56f741f0.jpg" alt="Image 2">
                     <h3>Naruto</h3>
                 </div>
-                <div class="card" onclick="goToDetails('jujutsu-kaisen.html')">
+                <div class="card" onclick="goToDetails('jujutsu-kaisen_anime.html')">
                     <img src="https://wallpapercave.com/wp/wp9402026.jpg" alt="Image 3">
                     <h3>JJK</h3>
                 </div>
-                <div class="card" onclick="goToDetails('tokyo-revengers.html')">
+                <div class="card" onclick="goToDetails('tokyo-revengers_anime.html')">
                     <img src="https://image.cdn2.seaart.ai/2023-06-17/35520900075589/37aadb27e66dd73da21f48928dcb15959a222225_high.webp" alt="Image 4">
                     <h3>Tokyo Revengers</h3>
                 </div>
-                <div class="card" onclick="goToDetails('DBS.html')">
+                <div class="card" onclick="goToDetails('DBS_anime.html')">
+                    <img src="https://www.chromethemer.com/download/hd-wallpapers/dragon-ball-super-super-3840x2160.jpg" alt="Image 5">
+                    <h3>DBS</h3>
+                </div>
+
+                <div class="card" onclick="goToDetails('tokyo-ghoul_anime.html')"">
+                    <img src="https://mfiles.alphacoders.com/101/thumb-350-1013749.webp" alt="Image 1">
+                    <h3>Tokyo Ghoul</h3>
+                </div>
+                <div class="card" onclick="goToDetails('naruto_anime.html')">
+                    <img src="https://i.pinimg.com/originals/34/c8/d2/34c8d2bc3e49048268e0f28b56f741f0.jpg" alt="Image 2">
+                    <h3>Naruto</h3>
+                </div>
+                <div class="card" onclick="goToDetails('jujutsu-kaisen_anime.html')">
+                    <img src="https://wallpapercave.com/wp/wp9402026.jpg" alt="Image 3">
+                    <h3>JJK</h3>
+                </div>
+                <div class="card" onclick="goToDetails('tokyo-revengers_anime.html')">
+                    <img src="https://image.cdn2.seaart.ai/2023-06-17/35520900075589/37aadb27e66dd73da21f48928dcb15959a222225_high.webp" alt="Image 4">
+                    <h3>Tokyo Revengers</h3>
+                </div>
+                <div class="card" onclick="goToDetails('DBS_anime.html')">
+                    <img src="https://www.chromethemer.com/download/hd-wallpapers/dragon-ball-super-super-3840x2160.jpg" alt="Image 5">
+                    <h3>DBS</h3>
+                </div>
+
+                <div class="card" onclick="goToDetails('tokyo-ghoul_anime.html')"">
+                    <img src="https://mfiles.alphacoders.com/101/thumb-350-1013749.webp" alt="Image 1">
+                    <h3>Tokyo Ghoul</h3>
+                </div>
+                <div class="card" onclick="goToDetails('naruto_anime.html')">
+                    <img src="https://i.pinimg.com/originals/34/c8/d2/34c8d2bc3e49048268e0f28b56f741f0.jpg" alt="Image 2">
+                    <h3>Naruto</h3>
+                </div>
+                <div class="card" onclick="goToDetails('jujutsu-kaisen_anime.html')">
+                    <img src="https://wallpapercave.com/wp/wp9402026.jpg" alt="Image 3">
+                    <h3>JJK</h3>
+                </div>
+                <div class="card" onclick="goToDetails('tokyo-revengers_anime.html')">
+                    <img src="https://image.cdn2.seaart.ai/2023-06-17/35520900075589/37aadb27e66dd73da21f48928dcb15959a222225_high.webp" alt="Image 4">
+                    <h3>Tokyo Revengers</h3>
+                </div>
+                <div class="card" onclick="goToDetails('DBS_anime.html')">
                     <img src="https://www.chromethemer.com/download/hd-wallpapers/dragon-ball-super-super-3840x2160.jpg" alt="Image 5">
                     <h3>DBS</h3>
                 </div>
@@ -84,7 +142,7 @@
 
 
         <div class="square-container">
-            <div class="square" onclick="goToDetails('tokyo-revengers.html')">
+            <div class="square" onclick="goToDetails('tokyo-ghoul_anime.html')">
                 <div class="square-content">
                     <img src="https://mfiles.alphacoders.com/101/thumb-350-1013749.webp" alt="Image 4">
                 </div>
@@ -93,7 +151,7 @@
                     <p>Head to<br>Gallery</p>
                 </div>
             </div>
-            <div class="square" onclick="goToDetails('tokyo-revengers.html')">
+            <div class="square" onclick="goToDetails('naruto_anime.html')">
                 <div class="square-content">
                     <img src="https://i.pinimg.com/originals/34/c8/d2/34c8d2bc3e49048268e0f28b56f741f0.jpg" alt="Image 4">
                 </div>
@@ -102,7 +160,7 @@
                     <p>Head to<br>Gallery</p>
                 </div>
             </div>
-            <div class="square" onclick="goToDetails('tokyo-revengers.html')">
+            <div class="square" onclick="goToDetails('jujutsu-kaisen_anime.html')">
                 <div class="square-content">
                     <img src="https://wallpapercave.com/wp/wp9402026.jpg" alt="Image 4">
                 </div>
@@ -111,7 +169,7 @@
                     <p>Head to<br>Gallery</p>
                 </div>
             </div>
-            <div class="square" onclick="goToDetails('tokyo-revengers.html')">
+            <div class="square" onclick="goToDetails('tokyo-revengers_anime.html')">
                 <div class="square-content">
                     <img src="https://image.cdn2.seaart.ai/2023-06-17/35520900075589/37aadb27e66dd73da21f48928dcb15959a222225_high.webp" alt="Image 4">
                 </div>
@@ -120,7 +178,7 @@
                     <p>Head to<br>Gallery</p>
                 </div>
             </div>
-            <div class="square" onclick="goToDetails('tokyo-revengers.html')">
+            <div class="square" onclick="goToDetails('DBS_anime.html')">
                 <div class="square-content">
                     <img src="https://www.chromethemer.com/download/hd-wallpapers/dragon-ball-super-super-3840x2160.jpg" alt="Image 4">
                 </div>
@@ -133,31 +191,36 @@
     </main>
     <footer class="footer">
     
-    <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-linkedin"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-instagram"></ion-icon>
-        </a></li>
-    </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="index.html">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="About US.html">About Us</a></li>
-      <li class="menu__item"><a class="menu__link" href="gallery.html">Gallery</a></li>
-      <li class="menu__item"><a class="menu__link" href="About US.html#team-grid">Team</a></li>
-      <li class="menu__item"><a class="menu__link" href="About US.html#contact">Contact Us</a></li>     
-    </ul>
-    <div class="copyright">
-        <p>&copy; 2024 PicHub | All Rights Reserverd</p>
-    </div>
-  </footer>
+        <footer>
+            <div class="footer-container">
+                
+                <ul class="footer-link">
+                    <li><a class="social_link" href="#">
+                        <ion-icon name="logo-facebook"></ion-icon>
+                      </a></li>
+                    <li><a class="social_link" href="#">
+                        <ion-icon name="logo-twitter"></ion-icon>
+                      </a></li>
+                    <li><a class="social_link" href="#">
+                        <ion-icon name="logo-linkedin"></ion-icon>
+                      </a></li>
+                    <li><a class="social_link" href="#">
+                        <ion-icon name="logo-instagram"></ion-icon>
+                      </a></li>
+                </ul>
+                <ul class="footer-nav">
+                    <li><a href="X:\Website\project24.github.io\index.html">Home</a></li>
+                    <li><a href="X:\Website\project24.github.io\About US.html">About us</a></li>
+                    <li><a href="X:\Website\project24.github.io\gallery.html">Gallery</a></li>
+                    <li><a href="X:\Website\project24.github.io\About US.html#team-grid">Team</a></li>
+                    <li><a href="anime_gallery.html">Anime Gallery</a></li>
+                    <li><a href="X:\Website\project24.github.io\About US.html#contact">Contact us</a></li>
+                </ul>
+                <div class="copyright">
+                    &copy;  PicHub | All rights reserved
+                </div>
+            </div>
+        </footer>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   
     <script>

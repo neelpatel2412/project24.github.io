@@ -29,6 +29,8 @@ header.hidden {
     opacity: 0; /* Make header transparent to hide it */
 }
 
+
+
 header .logo {
     display: flex;
     align-items: center;
@@ -189,14 +191,14 @@ footer {
     position: relative;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: auto;
     background-color: #333;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
 .footer-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
 }
