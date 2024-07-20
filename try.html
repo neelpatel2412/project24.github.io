@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PicHub | Home</title>
+    <link rel="icon" type="image/x-icon" href="Photos/PicHubStudios-Circle.png">
+    <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="header.footer.js"></script>
+    <style>
+        html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    padding-top: 5vh; /* Space for the header */
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    position: fixed;
+    top: 20px; /* Initial position below the top */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Increase width slightly */
+    max-width: 1200px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Cylindrical structure */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for opacity */
+    border: 5px solid #5f5858; /* Gray border */
+}
+
+header.hidden {
+    opacity: 0; /* Make header transparent to hide it */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+header nav {
+    display: flex;
+    align-items: left;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: left;
+}
+
+header nav ul li {
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.3s;
+}
+
+header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* Sidebar Menu */
+#sidebar-menu {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background: #333;
+    color: #fff;
+    transition: right 0.3s ease;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#sidebar-menu ul li {
+    margin: 10px 0;
+}
+
+#sidebar-menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    display: block;
+    transition: background 0.3s;
+}
+
+#sidebar-menu ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    display: none;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    header nav ul {
+        display: none;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+#sidebar-menu.active {
+    right: 0;
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+    header nav ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    #sidebar-menu {
+        width: 250px;
+    }
+
+    #sidebar-menu.active {
+        right: 0;
+    }
+}
+
+@media (min-width: 1201px) {
+    header nav ul {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: none;
+    }
+
+    #sidebar-menu {
+        width: 250px;
+    }
+
+    #sidebar-menu.active {
+        right: 0;
+    }
+}
+
+.container {
+    flex: 1; /* Take up available space */
+    max-width: 80%; /* set a max width to prevent overflow */
+    margin: 0 auto; /* add this to center the container horizontally */
+    padding: 20px; /* add some padding for better layout */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 100vh; /* Ensure the container takes full viewport height */
+}
+
+.pichub {
+    text-align: center; /* Center text horizontally */
+}
+
+.pichub img{
+    height: 800px;
+    width: 1200px;
+}
+.text {
+    font-size: 2.2em;
+    color: #fff;
+    font-family: papyrus;
+    margin-top: -50px;
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 100px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 70%; /* reduce max width for larger screens */
+    }
+    .pichub {
+        font-size: 25em; /* increase font size for larger screens */
+    }
+    .text {
+        font-size: 2.5em; /* increase font size for larger screens */
+    }
+    .button {
+        padding: 12px 25px; /* increase padding for larger screens */
+        font-size: 1.2em; /* increase font size for larger screens */
+    }
+}
+
+/* For medium screens (e.g. laptops) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .container {
+        max-width: 75%; /* adjust max width for medium screens */
+    }
+    .pichub {
+        font-size: 22em; /* adjust font size for medium screens */
+    }
+    .text {
+        font-size: 2.3em; /* adjust font size for medium screens */
+    }
+    .button {
+        padding: 10px 20px; /* adjust padding for medium screens */
+        font-size: 1.1em; /* adjust font size for medium screens */
+    }
+}
+
+/* For small screens (e.g. tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .container {
+        max-width: 85%; /* increase max width for smaller screens */
+    }
+    .pichub {
+        font-size: 18em; /* reduce font size for smaller screens */
+    }
+    .text {
+        font-size: 2em; /* reduce font size for smaller screens */
+    }
+    .button {
+        padding: 8px 15px; /* reduce padding for smaller screens */
+        font-size: 0.9em; /* reduce font size for smaller screens */
+    }
+}
+
+/* For extra small screens (e.g. large mobile phones) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .container {
+        max-width: 90%; /* increase max width for extra small screens */
+    }
+    .pichub {
+        font-size: 15em; /* reduce font size for extra small screens */
+    }
+    .text {
+        font-size: 1.8em; /* reduce font size for extra small screens */
+    }
+    .button {
+        padding: 6px 12px; /* reduce padding for extra small screens */
+        font-size: 0.8em; /* reduce font size for extra small screens */
+    }
+}
+
+/* For small mobile phones */
+@media (max-width: 575px) {
+    .container {
+        max-width: 95%; /* increase max width for small mobile phones */
+    }
+    .pichub {
+        font-size: 12em; /* reduce font size for small mobile phones */
+    }
+    .text {
+        font-size: 1.5em; /* reduce font size for small mobile phones */
+    }
+    .button {
+        padding: 4px 10px; /* reduce padding for small mobile phones */
+        font-size: 0.7em; /* reduce font size for small mobile phones */
+    }
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: relative; /* Move it to the bottom of the content */
+    z-index: 0;
+}
+
+.footer-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.footer-link {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-size: 1.8em;
+}
+
+.footer-link a:hover ion-icon {
+    scale: 1.2;
+    transform: translateY( -10px);
+    color: #ccc;
+    transition: 0.25s;
+}
+
+.footer-link li {
+    margin: 0 10px;
+}
+
+.footer-link a {
+    color: #fff;
+    text-decoration: none;
+}     
+
+.footer-link a:hover{
+    scale: 1.2;
+}
+
+.footer-nav {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.footer-nav li {
+    margin: 0 20px;
+}
+
+.footer-nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #ccc;
+}
+
+/* Add media queries to adjust footer styles for different screen sizes */
+@media only screen and (max-width: 768px) {
+    .footer-container {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+
+    .footer-icon {
+        font-size: 3em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .footer-nav a {
+        font-size: 1.2em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .footer-container {
+        max-width: 80%;
+        margin: 0 auto;
+    }
+
+    .footer-icon {
+        font-size: 2.5em;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .footer-nav a {
+        font-size: 1.0em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .footer-container {
+        max-width: 70%;
+        margin: 0 auto;
+    }
+
+    .footer-icon {
+        font-size: 2em;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .footer-nav {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    .footer-nav a {
+        font-size: 0.8em;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="Photos/PicHubStudios-Circle.png" alt="Logo">
+            <span>PicHub</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="About US.html">About Us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="About US.html#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+    </header>
+    <div id="sidebar-menu">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a class="active" href="About US.html">About Us</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="About US.html#contact">Contact Us</a></li>
+        </ul>
+    </div>
+    <div id="overlay" onclick="toggleMenu()"></div>
+
+    <div class="container">
+        <div class="pichub">
+            <img src="Photos\home page\PicHub text.jpg" alt="PicHub">
+        </div>
+        <div class="text">There is a lot more than what you think.</div>
+        <button class="button">Click Me</button>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <ul class="footer-link">
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-twitter"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                  </a></li>
+                <li><a class="social_link" href="#">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                  </a></li>
+            </ul>
+            <ul class="footer-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About US.html">About us</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="About US.html#team-grid">Team</a></li>
+                <li><a href="About US.html#contact">Contact us</a></li>
+            </ul>
+            <div class="copyright">
+                &copy;  PicHub | All rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript to handle the header fade in and out on scroll
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                // Downscroll
+                header.classList.add('hidden');
+            } else {
+                // Upscroll
+                header.classList.remove('hidden');
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>
