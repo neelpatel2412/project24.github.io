@@ -7,6 +7,7 @@ body {
     color: white;
     display: flex;
     flex-direction: column;
+
 }
 
 header, main, footer {
@@ -276,30 +277,31 @@ footer {
 }
 
 .text {
-    font-size: 2em;
-    margin-top: -30vh;
+    font-size: 3vw;
+    margin-top: -15vw;
     word-spacing: 0.5em;
     font-family: 'papyrus';
     font-weight: bolder;
 }
 
 .pichub {
-    font-size: 30vh;
+    font-size: 20vw;
     font-family: 'Yellowtail', cursive;
     color: white;
     padding-bottom: 0px;
     margin-bottom: 0px;
-    margin-top: -20vh;
+    margin-top: -20vw;
+    margin-bottom: -10vw;
 }
 
 .button-container {
-    margin-top: 20px;
+    margin-top: 20pxs;
     margin-bottom: 14vh;
 }
 
 button {
     padding: 10px 20px;
-    font-size: 2vh;
+    font-size: 2vw;
     color: black;
     background-color: white;
     border: 2px solid black;
