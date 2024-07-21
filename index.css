@@ -1,102 +1,97 @@
 body {
+    margin: auto;
+    background-image: url('Photos\home page\bg1.png') no-repeat fixed center;
+    background-size: cover;
+    overflow: hidden;
+    height: auto;
+}
+
+.nav {
     display: flex;
-    flex-direction: column;
-    font-family: Arial, sans-serif;
-    background-color: #000000;
+    justify-content: space-between;
+    padding: 10px;
+    background: transparent;
+    backdrop-filter: blur(8px);
 }
 
-.container {
-    text-align: center;
-    max-width: 80%; /* set a max width to prevent overflow */
-    margin: 0 auto; /* add this to center the container horizontally */
-    padding: 20px; /* add some padding for better layout */
-   
+.nav ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
-.pichub {
-    font-size: 20em;
-    font-weight: bold;
-    display: inline-block;
-    line-height: 1;
+.nav .left-nav {
+    justify-content: flex-start;
+}
+
+.nav .right-nav {
+    justify-content: flex-end;
+    flex-grow: 1;
+    text-align: right;
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: background 0.2s;
+    font-size: 1.2em;
+}
+
+.nav ul li a:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+
+main {
+    color: white;
+    height: 80vh; /* Full height of the viewport */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center align text */
+    margin-bottom: 10vh;
 }
 
 .text {
-    margin-top: -50px;
-    font-size: 2.2em;
-    color: #fff;
-    font-family: papyrus;
+    font-size: 3vh;
+    margin-top: -20vh; /* Adjust this value to decrease the space */
+    word-spacing: 0.5em; /* Adjust the value as needed */
+    font-family: 'papyrus';
 }
 
-.button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    background-color: #007BFF;
+.pichub {
+    font-size: 20vh;
+    font-family: 'Yellowtail', cursive;
     color: white;
-    border: none;
+    padding-bottom: 0px; /* Can be adjusted as needed */
+    margin-bottom: 0; /* Added to ensure no extra space below */
+}
+
+.button-container {
+    margin-top: 20px; /* Space above the button */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 2vh;
+    color: black;
+    background-color: white;
+    border: 2px solid black; /* Added border color */
     border-radius: 5px;
-    margin-bottom: 100px;
+    color: black;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.button:hover {
-    background-color: #0056b3;
-}
-
-/* Media Queries */
-
-/* For screens with a maximum width of 1200px */
-@media only screen and (max-width: 1200px) {
-    .pichub {
-        font-size: 18em;
-    }
-    .text {
-        font-size: 2em;
-    }
-    .button {
-        padding: 8px 18px;
-        font-size: 0.9em;
-    }
-}
-
-/* For screens with a maximum width of 992px */
-@media only screen and (max-width: 992px) {
-    .pichub {
-        font-size: 15em;
-    }
-    .text {
-        font-size: 1.8em;
-    }
-    .button {
-        padding: 6px 15px;
-        font-size: 0.8em;
-    }
-}
-
-/* For screens with a maximum width of 768px */
-@media only screen and (max-width: 768px) {
-    .pichub {
-        font-size: 12em;
-    }
-    .text {
-        font-size: 1.5em;
-    }
-    .button {
-        padding: 4px 12px;
-        font-size: 0.7em;
-    }
-}
-
-/* For screens with a maximum width of 480px */
-@media only screen and (max-width: 480px) {
-    .pichub {
-        font-size: 9em;
-    }
-    .text {
-        font-size: 1.2em;
-    }
-    .button {
-        padding: 2px 10px;
-        font-size: 0.6em;
-    }
+button:hover {
+    background-color: black;
+    border: 2px solid white;
+    color: white;
 }
