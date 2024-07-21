@@ -1,7 +1,9 @@
 body {
     margin: auto;
-    background-image: url('Photos\home page\bg1.png') no-repeat fixed center;
-    background-size: cover;
+    background: fixed;
+    background-image: url('Photos/home page/bg1.png');
+    background-position: center;
+    background-size: cover;    
     overflow: hidden;
     height: auto;
 }
