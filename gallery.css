@@ -444,7 +444,7 @@ body {
 
 
 .fade-in-section {
-    opacity: 0;
+    opacity: 0.5;
     transform: translateY(50px);
     transition: opacity 1s ease, transform 1s ease;
 }
@@ -482,6 +482,7 @@ body {
     .text-image-section {
         flex-direction: column;
         text-align: center;
+        margin-top: 15%;
     }
     .image-content, .text-content {
         flex: none;
