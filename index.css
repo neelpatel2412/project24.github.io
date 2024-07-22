@@ -309,7 +309,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s;
     height: 8vh;
-    width: 12vw;
+    width: 25vh;
 }
 
 button:hover {
