@@ -67,6 +67,12 @@
             "website_name": "PicHub",
             "website_privacy_policy_url": "https://pichub.co.uk/privacy%20policy"
         });
+
+        // Ensure the preferences center opens when the button is clicked
+        document.getElementById('open_preferences_center').addEventListener('click', function(e) {
+            e.preventDefault();
+            cookieconsent.showPreferences();
+        });
     });
     </script>
 
