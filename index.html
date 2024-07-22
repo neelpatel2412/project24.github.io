@@ -6,6 +6,26 @@
     <link href='https://fonts.googleapis.com/css?family=Yellowtail' rel='stylesheet'>
     <title>Pichub</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        /* CSS for the fixed button */
+        #open_preferences_center {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        #open_preferences_center:hover {
+            background-color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -29,26 +49,21 @@
             <a href="gallery.html">Gallery</a>
             <a href="About US.html#contact">Contact Us</a>
         </div>
-        
     </header>
+
     <!-- Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
-<script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
-<script type="text/javascript" charset="UTF-8">
-document.addEventListener('DOMContentLoaded', function () {
-cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"PicHub","website_privacy_policy_url":"https://pichub.co.uk/privacy%20policy"});
-});
-</script>
+    <script type="text/javascript" src="//www.freeprivacypolicy.com/public/cookie-consent/4.1.0/cookie-consent.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+    document.addEventListener('DOMContentLoaded', function () {
+        cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express","palette":"dark","language":"en","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"page_refresh_confirmation_buttons":false,"website_name":"PicHub","website_privacy_policy_url":"https://pichub.co.uk/privacy%20policy"});
+    });
+    </script>
 
-<noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
-<!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
+    <noscript>Cookie Consent by <a href="https://www.freeprivacypolicy.com/">Free Privacy Policy Generator</a></noscript>
+    <!-- End Cookie Consent by FreePrivacyPolicy.com https://www.FreePrivacyPolicy.com -->
 
-
-
-
-
-<!-- Below is the link that users can use to open Preferences Center to change their preferences. Do not modify the ID parameter. Place it where appropriate, style it as needed. -->
-
-<a href="#" id="open_preferences_center">Update cookies preferences</a>
+    <!-- Fixed button for cookie preferences -->
+    <a href="#" id="open_preferences_center">Update cookies preferences</a>
 
     <main>
         <div class="pichub">
@@ -63,7 +78,6 @@ cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express",
     </main>
     <footer>
         <div class="footer-container">
-            
             <ul class="footer-link">
                 <li><a class="social_link" href="#">
                     <ion-icon name="logo-facebook"></ion-icon>
@@ -86,12 +100,11 @@ cookieconsent.run({"notice_banner_type":"interstitial","consent_type":"express",
                 <li><a href="About US.html#contact">Contact us</a></li>
             </ul>
             <div class="copyright">
-                &copy;  PicHub | All rights reserved |<b><u><a href="Privacy Policy.html" style="text-decoration: none; color: white; " >Privacy Policy</a></u></b>
+                &copy; PicHub | All rights reserved |<b><u><a href="Privacy Policy.html" style="text-decoration: none; color: white;">Privacy Policy</a></u></b>
             </div>
         </div>
     </footer>
-      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
